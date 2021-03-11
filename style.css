@@ -21,6 +21,18 @@ td {
   width: 30px;
 }
 
+.row-header,
+.header,
+.footer {
+  background-color: lightsalmon;
+  font-size: 20px;
+}
+
+.header td,
+.footer td {
+  font-size: 20px;
+}
+
 .white {
   background-color: white;
 }
