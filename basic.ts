@@ -100,31 +100,75 @@ var RULES = {
     ]
   },
   "♞": {
-    moveAndTake: [{
-      segments: [{
-        direction: "strait",
-        numberOfSquares: [2],
-        mustHaveClearPath: false
-      },
+    moveAndTake: [
       {
-        direction: "turnAndStrait",
-        numberOfSquares: [1],
-        mustHaveClearPath: false
+        segments: [
+          {
+            direction: "strait",
+            numberOfSquares: [2],
+            mustHaveClearPath: false
+          },
+          {
+            direction: "turnAndStrait",
+            numberOfSquares: [1],
+            mustHaveClearPath: false
+          }
+        ]
       }
-      ]
-    }]
+    ]
   },
   "♝": {
-    moveAndTake: []
+    moveAndTake: [
+      {
+        direction: "diagonal",
+        numberOfSquares: ["any"],
+        mustHaveClearPath: true
+      }
+    ]
   },
   "♜": {
-    moveAndTake: []
+    moveAndTake: [
+      {
+        direction: "strait",
+        numberOfSquares: ["any"],
+        mustHaveClearPath: true
+      }
+    ]
   },
   "♛": {
-    moveAndTake: []
+    moveAndTake: [
+      {
+        direction: "diagonal",
+        numberOfSquares: ["any"],
+        mustHaveClearPath: true
+      },
+      {
+        direction: "strait",
+        numberOfSquares: ["any"],
+        mustHaveClearPath: true
+      }
+    ]
   },
   "♚": {
-    moveAndTake: []
+    moveAndTake: [
+      {
+        direction: "diagonal",
+        numberOfSquares: [1],
+        mustHaveClearPath: true
+      },
+      {
+        direction: "strait",
+        numberOfSquares: [1],
+        mustHaveClearPath: true
+      },
+      {
+        direction: "strait",
+        numberOfSquares: [1],
+        specialCondition: {
+          mustNotHaveMoved: true
+        }
+      }
+    ]
   }
 };
 
