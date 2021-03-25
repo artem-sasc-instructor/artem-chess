@@ -72,6 +72,63 @@ interface MyGame {
   playerId: string;
 }
 
+var RULES = {
+  "♟": {
+    "move": [
+      {
+        "direction": "forward",
+        "numberOfSquares": [1,2],
+        "mustHaveClearPath": true
+      }
+    ],
+    "take": [
+      {
+        "direction": "forward-diagonal",
+        "numberOfSquares": [1]
+      },
+      {
+        "direction": "forward-diagonal",
+        "numberOfSquares": [1],
+        "specialCondition": {
+          "previousOponentsMove": {
+            "pieceType": "♟",
+            "numberOfSquares": [2],
+            "finalLocation": [
+              "left",
+              "right"
+              ]
+          }
+        }
+      }
+    ]
+  },
+  "♞": {
+    "moveAndTake": [
+
+    ]
+  },
+  "♝": {
+    "moveAndTake": [
+      
+    ]
+  },
+  "♜": {
+    "moveAndTake": [
+      
+    ]
+  },
+  "♛": {
+    "moveAndTake": [
+      
+    ]
+  },
+  "♚": {
+    "moveAndTake": [
+      
+    ]
+  }, 
+}
+
 var board = {
   A: {
     1: "♖",
