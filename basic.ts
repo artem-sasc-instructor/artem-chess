@@ -74,60 +74,59 @@ interface MyGame {
 
 var RULES = {
   "♟": {
-    "move": [
+    move: [
       {
-        "direction": "forward",
-        "numberOfSquares": [1,2],
-        "mustHaveClearPath": true
+        direction: "forward",
+        numberOfSquares: [1, 2],
+        mustHaveClearPath: true
       }
     ],
-    "take": [
+    take: [
       {
-        "direction": "forward-diagonal",
-        "numberOfSquares": [1]
+        direction: "forward-diagonal",
+        numberOfSquares: [1]
       },
       {
-        "direction": "forward-diagonal",
-        "numberOfSquares": [1],
-        "specialCondition": {
-          "previousOponentsMove": {
-            "pieceType": "♟",
-            "numberOfSquares": [2],
-            "finalLocation": [
-              "left",
-              "right"
-              ]
+        direction: "forward-diagonal",
+        numberOfSquares: [1],
+        specialCondition: {
+          previousOponentsMove: {
+            pieceType: "♟",
+            numberOfSquares: [2],
+            finalLocation: ["leftOfThisPiece", "rightOf"]
           }
         }
       }
     ]
   },
   "♞": {
-    "moveAndTake": [
-
-    ]
+    moveAndTake: [{
+      segments: [{
+        direction: "strait",
+        numberOfSquares: [2],
+        mustHaveClearPath: false
+      },
+      {
+        direction: "turnAndStrait",
+        numberOfSquares: [1],
+        mustHaveClearPath: false
+      }
+      ]
+    }]
   },
   "♝": {
-    "moveAndTake": [
-      
-    ]
+    moveAndTake: []
   },
   "♜": {
-    "moveAndTake": [
-      
-    ]
+    moveAndTake: []
   },
   "♛": {
-    "moveAndTake": [
-      
-    ]
+    moveAndTake: []
   },
   "♚": {
-    "moveAndTake": [
-      
-    ]
-  }, 
-}
+    moveAndTake: []
+  }
+};
 
 var board = {
   A: {
