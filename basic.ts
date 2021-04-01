@@ -235,15 +235,22 @@ var myGame: MyGame;
 
 export var basicVar = "basic";
 
-var tdElements = document.getElementsByTagName("TD");
+var whiteBoardElements = document.getElementsByClassName("white")
+var blackBoardElements = document.getElementsByClassName("black");
+
+addBoardEventListener(whiteBoardElements);
+addBoardEventListener(blackBoardElements);
+
+function addBoardEventListener(
+  boardElements
+) {
+  boardElements.addEventListener("click", handleClick);
+}
+
 
 var joinButton = document.getElementById("join");
 
 var checkIntervalId;
-
-for (var tdElement of tdElements) {
-  tdElement.addEventListener("click", handleClick);
-}
 
 joinButton.addEventListener("click", join);
 
@@ -266,7 +273,9 @@ function join(event) {
   waitingDiv.classList.remove("hidden");
 }
 
-function handleClick(event) {}
+function handleClick(event) {
+  // alert()
+}
 
 async function put<T>(url, data): Promise<T> {
   // Awaiting fetch which contains method,
