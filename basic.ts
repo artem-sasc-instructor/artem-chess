@@ -273,7 +273,11 @@ function join(event) {
 }
 
 function handleClick(event: Event) {
-  alert(event.target);
+  var boardCell: HTMLElement = event.target;
+  var columnIndex = boardCell.getAttribute("columnIndex");
+  var rowIndex = boardCell.parentElement.getAttribute("rowIndex");
+
+  alert(board[columnIndex][rowIndex]);
 }
 
 async function put<T>(url, data): Promise<T> {
