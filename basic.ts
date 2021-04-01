@@ -162,10 +162,10 @@ var RULES = {
         mustHaveClearPath: true
       },
       {
-        direction: "strait",
-        numberOfSquares: [1],
+        direction: "sideways",
+        numberOfSquares: [2],
         specialCondition: {
-          mustNotHaveMoved: true
+          castling: true
         }
       }
     ]
