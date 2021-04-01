@@ -235,18 +235,17 @@ var myGame: MyGame;
 
 export var basicVar = "basic";
 
-var whiteBoardElements = document.getElementsByClassName("white")
+var whiteBoardElements = document.getElementsByClassName("white");
 var blackBoardElements = document.getElementsByClassName("black");
 
 addBoardEventListener(whiteBoardElements);
 addBoardEventListener(blackBoardElements);
 
-function addBoardEventListener(
-  boardElements
-) {
-  boardElements.addEventListener("click", handleClick);
+function addBoardEventListener(boardElements) {
+  for (var boardElement of boardElements) {
+    boardElement.addEventListener("click", handleClick);
+  }
 }
-
 
 var joinButton = document.getElementById("join");
 
@@ -273,8 +272,8 @@ function join(event) {
   waitingDiv.classList.remove("hidden");
 }
 
-function handleClick(event) {
-  // alert()
+function handleClick(event: Event) {
+  alert()
 }
 
 async function put<T>(url, data): Promise<T> {
