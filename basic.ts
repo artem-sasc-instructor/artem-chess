@@ -273,7 +273,7 @@ function join(event) {
 }
 
 function handleClick(event: Event) {
-  alert()
+  alert(event.target);
 }
 
 async function put<T>(url, data): Promise<T> {
