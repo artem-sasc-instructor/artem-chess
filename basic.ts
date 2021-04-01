@@ -272,8 +272,8 @@ function join(event) {
   waitingDiv.classList.remove("hidden");
 }
 
-function handleClick(event: Event) {
-  var boardCell: HTMLElement = event.target;
+function handleClick(event) {
+  var boardCell = event.target;
   var columnIndex = boardCell.getAttribute("columnIndex");
   var rowIndex = boardCell.parentElement.getAttribute("rowIndex");
 
